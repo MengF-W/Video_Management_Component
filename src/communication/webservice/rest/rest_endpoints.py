@@ -1,10 +1,13 @@
+import os
+
 from flask import Flask, request, jsonify, send_file
 from flask_cors import CORS
 from src.core import video
+from dotenv import load_dotenv
 
 _app = Flask(__name__)
 CORS(_app, expose_headers=["Content-Disposition"])
-
+load_dotenv()
 
 @_app.route('/play', methods=['POST'])
 def play():
@@ -26,4 +29,4 @@ def record():
                      download_name=video_file_name)
 
 def start():
-    _app.run(port=5000, debug=True, threaded=True)
+    _app.run(host=os.getenv("HOST_ADDRESS"),port=5000, debug=True, threaded=True)
