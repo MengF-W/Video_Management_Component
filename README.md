@@ -17,7 +17,7 @@ The video management component act as a hub of video processing. It captures vid
 - `python app.py` Run the application under src directory
 
 # Docker Image Command
-`docker build -t video_management_component_user_interfaces .`    -To build the docker image
+`docker build -t video_management_component .`    -To build the docker image
 
 # Docker Container Command
 `docker-compose up -d`      -To start the docker container from the docker image with the docker compose file configuration 
